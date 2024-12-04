@@ -8,6 +8,7 @@ disable=
       W0703, #catching too general exception Exception
       E0015, #unrecognized-option
       C0209, #consider-using-f-string
+      C0321, #multiple-statements
 
 
 
