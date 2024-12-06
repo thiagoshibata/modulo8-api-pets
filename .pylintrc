@@ -9,6 +9,8 @@ disable=
       E0015, #unrecognized-option
       C0209, #consider-using-f-string
       C0321, #multiple-statements
+      W0719, #broad-exception-raised
+
 
 
 
