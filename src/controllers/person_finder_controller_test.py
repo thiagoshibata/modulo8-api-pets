@@ -9,7 +9,7 @@ class MockPerson():
         self.pet_name = pet_name
         self.pet_type = pet_type
 
-
+# Simulando o retorno do get_person dentro de PeopleRepository
 class MockPeopleRepository:
     def get_person(self, person_id: int):
         return MockPerson(
