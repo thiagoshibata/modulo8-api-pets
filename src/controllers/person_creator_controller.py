@@ -1,4 +1,5 @@
 import re #regular expressions
+from typing import Dict
 from src.models.sqlite.interfaces.people_repository import PeopleRepositoryInterface
 from src.controllers.interfaces.person_creator_controller import PersonCreatorControllerInterface
 
@@ -6,7 +7,7 @@ class PersonCreatorController(PersonCreatorControllerInterface):
     def __init__(self, people_repository: PeopleRepositoryInterface):
         self.__people_repository = people_repository
 
-    def create(self, person_info: dict) -> dict:
+    def create(self, person_info: Dict) -> Dict:
         first_name = person_info["first_name"]
         last_name = person_info["last_name"]
         age = person_info["age"]
@@ -27,7 +28,7 @@ class PersonCreatorController(PersonCreatorControllerInterface):
     def __insert_person_in_db(self, first_name: str, last_name: str, age: int, pet_id: int) -> None:
         self.__people_repository.insert_person(first_name, last_name, age, pet_id)
 
-    def __format_response(self, person_info: dict) -> dict:
+    def __format_response(self, person_info: Dict) -> Dict:
         return {
             "data": {
                 "type": "Person",
